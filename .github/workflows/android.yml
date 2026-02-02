@@ -1,6 +1,11 @@
 
 - name: Aceitar licenças Android
   run: yes | sdkmanager --licenses
+- name: Debug estrutura
+  run: |
+    pwd
+    ls -la
+    find . -name buildozer.spec
 
 - name: Instalar Android Build Tools
   run: |
