@@ -1,3 +1,19 @@
+
+- name: Aceitar licenças Android
+  run: yes | sdkmanager --licenses
+
+- name: Instalar Android Build Tools
+  run: |
+    yes | sdkmanager \
+      "platform-tools" \
+      "platforms;android-31" \
+      "build-tools;31.0.0"
+
+- name: Build APK Debug
+  run: |
+    source venv/bin/activate
+    buildozer android debug
+
 name: Build APK (Kivy)
 
 on:
@@ -36,6 +52,10 @@ jobs:
     - name: Build APK
       run: |
         buildozer android debug
+        env:
+  ANDROID_SDK_ROOT: /home/runner/.buildozer/android/platform/android-sdk
+  ANDROID_HOME: /home/runner/.buildozer/android/platform/android-sdk
+
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
