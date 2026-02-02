@@ -6,6 +6,11 @@
     pwd
     ls -la
     find . -name buildozer.spec
+- name: Build APK Debug
+  run: |
+    cd kdecash_app
+    source venv/bin/activate
+    buildozer android debug
 
 - name: Instalar Android Build Tools
   run: |
