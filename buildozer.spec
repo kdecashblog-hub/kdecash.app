@@ -3,6 +3,9 @@ title = KdeCash
 package.name = kdecash
 package.domain = com.kdecash
 
+version = 0.1.0
+
+
 source.dir = .
 source.include_exts = py,png,jpg,kv
 
